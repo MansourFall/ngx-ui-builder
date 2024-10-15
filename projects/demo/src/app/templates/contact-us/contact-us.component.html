@@ -1,0 +1,42 @@
+<div class="flex flex-column">
+  <div>
+    <uib-zone id="map">
+      <ng-template uib-template="map-element" let-config>
+        <div style="height: 100px">this is a map element</div>
+      </ng-template>
+    </uib-zone>
+
+    <uib-zone id="form">
+      <ng-template uib-template="form-element" let-config>
+        <div style="height: 100px">this is a form element</div>
+      </ng-template>
+    </uib-zone>
+  </div>
+
+      <div class="uib-bootstrap">
+
+        <uib-toolbar>
+          <uib-toolbar>
+            <button i18n type="button" class="btn btn-warning" uib-tooltip="Download Configuration as JSON" (click)="configService.exportConfiguration()">
+              Download
+            </button>
+            <button i18n type="button" class="btn btn-success" uib-tooltip="Save Configuration">
+              Save
+            </button>
+          </uib-toolbar>
+        </uib-toolbar>
+
+        <uib-configurator>
+
+          <ng-template uib-template="nav-bar" let-context>
+            <label i18n class="form-label" for="logo">Logo:</label>
+            <input class="form-control" id="logo"
+                   type="text"
+                   [(ngModel)]="context.config.logo"
+                   (ngModelChangeDebounced)="context.configChanged()"
+            />
+          </ng-template>
+
+        </uib-configurator>
+      </div>
+</div>

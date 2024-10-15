@@ -1,70 +1,39 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  ConfigurableService,
-  ConfigService,
-  ZoneComponent,
-  ToolbarComponent,
-  ConfiguratorComponent,
-  ToastComponent,
-  TemplateNameDirective,
-  NgModelChangeDebouncedDirective,
-  TooltipDirective,
-  ComponentConfig
-} from '@gsaas/ngx-ui-builder';
-import { defaultConfig } from "./config";
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import {ButtonModule} from "primeng/button";
-import {RippleModule} from "primeng/ripple";
-import {StyleClassModule} from 'primeng/styleclass';
 import {PrimeNGConfig} from "primeng/api";
-import {BadgeModule} from "primeng/badge";
+import {ContactUsComponent} from "./templates/contact-us/contact-us.component";
+import {LandingPageComponent} from "./templates/landing-page/landing-page.component";
+import {NgIf} from "@angular/common";
+import {rootConfig} from "./config";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule,
-    FormsModule,
-
-    ZoneComponent,
-    ToolbarComponent,
-    ConfiguratorComponent,
-    ToastComponent,
-    TemplateNameDirective,
-    NgModelChangeDebouncedDirective,
-    TooltipDirective,
-
-    ButtonModule,
-    RippleModule,
-    StyleClassModule,
-    BadgeModule
+    ContactUsComponent,
+    LandingPageComponent,
+    NgIf
   ],
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
 
+  contactUsIsActive: boolean;
+  landingPageIsActive: boolean;
   constructor(
-    public configService: ConfigService,
-    public configurableService: ConfigurableService,
     private primengConfig: PrimeNGConfig) {
    // Enable ripple effect globally
     this.primengConfig.ripple = true;
   }
 
   ngOnInit() {
-    // Initial state of the UI builder
-    this.configService.init(this.getPageConfig());
+    const pageConfig = this.getPageConfig();
+    console.log(pageConfig);
+    this.contactUsIsActive = pageConfig.contactUsIsActive;
+    this.landingPageIsActive = pageConfig.landingPageIsActive;
   }
 
-  save() {
-    localStorage.setItem('config', this.configService.getAllConfiguration());
+  getPageConfig(): any {
+    const localConfig = localStorage.getItem('config') ?? JSON.stringify(rootConfig);
+    return JSON.parse(localConfig);
   }
-
-  getPageConfig(): ComponentConfig[] {
-    const localConfig = localStorage.getItem('config') ?? JSON.stringify(defaultConfig);
-    return JSON.parse(localConfig) as ComponentConfig[];
-  }
-
-
 }
