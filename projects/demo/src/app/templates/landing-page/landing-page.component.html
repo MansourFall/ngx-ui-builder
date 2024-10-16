@@ -5,14 +5,19 @@
 
         <div class="bg-gray-900 shadow-2 flex relative lg:static" style="min-height: 84px;">
           <div class="flex align-items-center justify-content-center px-5 bg-gray-800"><img
-            [src]="config.logo" alt="Image" height="40"></div>
+            [src]="config.logo" alt="Image" height="40">
+          </div>
+
           <div class="flex flex-1 px-3"><span class="flex align-items-center"><i class="pi pi-search text-gray-500"></i></span><input
             type="text" placeholder="Search for anything"
             class="appearance-none border-none flex-auto bg-transparent outline-none p-component text-gray-500 pl-3">
           </div>
+
           <a pRipple pStyleClass="@next" enterClass="hidden" leaveToClass="hidden"
-             class="p-element cursor-pointer flex align-items-center justify-content-center lg:hidden text-white pr-5"><i
-            class="pi pi-bars text-4xl"></i><span class="p-ink"></span></a>
+             class="p-element cursor-pointer flex align-items-center justify-content-center lg:hidden text-white pr-5">
+            <i class="pi pi-bars text-4xl"></i><span class="p-ink"></span>
+          </a>
+
           <div
             class="lg:flex hidden absolute lg:static left-0 top-100 z-1 shadow-2 lg:shadow-none lg:pr-5 w-full lg:w-auto bg-gray-900">
             <ul

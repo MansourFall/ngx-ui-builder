@@ -4,6 +4,7 @@ import {ContactUsComponent} from "./templates/contact-us/contact-us.component";
 import {LandingPageComponent} from "./templates/landing-page/landing-page.component";
 import {NgIf} from "@angular/common";
 import {rootConfig} from "./config";
+import {PrismaTemplateComponent} from "./templates/prisma-template/prisma-template.component";
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ import {rootConfig} from "./config";
   imports: [
     ContactUsComponent,
     LandingPageComponent,
+    PrismaTemplateComponent,
     NgIf
   ],
   templateUrl: './app.component.html'
