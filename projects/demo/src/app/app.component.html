@@ -49,21 +49,38 @@
   </section>
 
   <section class="body">
-    <div class="p-5">
-      <h2 class="text-3xl lg:text-5xl mb-0">About Us</h2>
-      <div class="grid">
-        <div class="col-12 lg:col-6">
-          <h3 class="main-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-          <p class="sub-heading">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
-        </div>
-        <div class="col-12 lg:col-6">
-          <div class="text-center border-round-sm">
-            <img loading="lazy" width="100%" style="border-radius: 1rem" src="https://s3-alpha-sig.figma.com/img/fe3e/13a7/6ce3d2e6eda966b37b643d639baa140f?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jJYYWYsKSOvorPMIm~dAgFKLZibMOlr5aQwy5hxn9HwnzQk6ZUB8j25YViv5aCYSEScR~5PnZ1aBGo3K9OQWUiEqqt-vx-~ZRZxV1rI-4SZD6jeyASXb75YH5WqeiBrNGWCcSA1R5U-zqWesp5rHg-jbxHghEXiKP32m4hoSlPX4bLajf4BeNVkzoEYtRASmP-9tCF1riIEiJtv7eIk0jPfTdZiP-872nRICS3pXuHlQYZ4jGM1zWo4GUSSj2ZpDDrdJp8YFJwuLIxETzO--hg3OopVVKzw1A5ptDPyUzSn2TZb-lhUb2uW~r6RuoHnlOHmpFQzc4SFdM5Robn0vkw__"  alt="About Us illustration">
+
+      <div class="p-5">
+        <uib-zone id="about-us-primary">
+          <ng-template uib-template="primary-heading" let-config>
+            <h2 class="text-3xl lg:text-5xl mb-0" [ngStyle]="{'color': config?.color}">{{config?.text}}</h2>
+          </ng-template>
+        </uib-zone>
+
+        <div class="grid">
+          <div class="col-12 lg:col-6">
+            <uib-zone id="about-us-secondary">
+              <ng-template uib-template="secondary-heading" let-config>
+                <h3 class="main-heading" [ngStyle]="{'color': config?.color}">{{config?.text}}</h3>
+              </ng-template>
+            </uib-zone>
+            <uib-zone id="about-us-content">
+              <ng-template uib-template="paragraph" let-config>
+                <p class="inline-block" [ngStyle]="{'color': config?.color}">{{config?.text}}</p>
+              </ng-template>
+            </uib-zone>
+          </div>
+          <div class="col-12 lg:col-6">
+            <div class="text-center border-round-sm">
+              <uib-zone id="featured-image">
+                <ng-template uib-template="image" let-config>
+                  <img loading="lazy" width="100%" style="border-radius: 1rem" [src]="config?.src"  alt="About Us illustration">
+                </ng-template>
+              </uib-zone>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
   </section>
 
     <uib-zone id="footer">
@@ -185,6 +202,46 @@
                  [(ngModel)]="context.config.color"
                  (ngModelChangeDebounced)="context.configChanged()"
           />
+        </ng-template>
+
+        <ng-template uib-template="primary-heading" let-context>
+          <label i18n class="form-label" for="text"> Content:</label>
+          <input class="form-control" id="text"
+                 type="text"
+                 [(ngModel)]="context.config.text"
+                 (ngModelChangeDebounced)="context.configChanged()"/>
+          <label i18n class="form-label" for="color"> Color:</label>
+          <input class="form-control" id="color"
+                 type="text"
+                 [(ngModel)]="context.config.color"
+                 (ngModelChangeDebounced)="context.configChanged()"/>
+        </ng-template>
+
+        <ng-template uib-template="secondary-heading" let-context>
+          <label i18n class="form-label" for="text"> Content:</label>
+          <input class="form-control" id="text"
+                 type="text"
+                 [(ngModel)]="context.config.text"
+                 (ngModelChangeDebounced)="context.configChanged()"/>
+          <label i18n class="form-label" for="color"> Color:</label>
+          <input class="form-control" id="color"
+                 type="text"
+                 [(ngModel)]="context.config.color"
+                 (ngModelChangeDebounced)="context.configChanged()"/>
+        </ng-template>
+
+        <ng-template uib-template="paragraph" let-context>
+          <label i18n class="form-label"> Content:</label>
+          <textarea class="form-control"
+                 type="text"
+                 [(ngModel)]="context.config.text"
+                 (ngModelChangeDebounced)="context.configChanged()">
+          </textarea>
+          <label i18n class="form-label" for="color"> Color:</label>
+          <input class="form-control" id="color"
+                 type="text"
+                 [(ngModel)]="context.config.color"
+                 (ngModelChangeDebounced)="context.configChanged()"/>
         </ng-template>
 
       </uib-configurator>
