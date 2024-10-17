@@ -1,32 +1,69 @@
 import { ComponentConfig } from "@gsaas/ngx-ui-builder";
 
+// export const defaultConfig:ComponentConfig[] = [
+//   {
+//     id: 'header',
+//     type: '_container',
+//     items: ['nav-bar'],
+//     classes: 'flex-column',
+//   },
+//   {
+//     id: 'body',
+//     type: '_container',
+//     items: ['title'],
+//     classes: 'flex-column',
+//   },
+//   {
+//     id: 'footer',
+//     type: '_container',
+//     items: ['title'],
+//     classes: 'flex-column',
+//   },
+//   {
+//     id: 'title',
+//     type: 'title',
+//   },
+//   {
+//     id: 'nav-bar',
+//     type: 'nav-bar',
+//     logo: 'https://storage.googleapis.com/g-saas.appspot.com/tenants/66b36d8e84119bb650ebeb79/prima_health.png',
+//   },
+// ];
+
+
 export const defaultConfig:ComponentConfig[] = [
   {
-    id: 'header',
+    id: 'header-logo',
     type: '_container',
-    items: ['nav-bar'],
-    classes: 'flex-column',
+    items: ['logo'],
   },
   {
-    id: 'body',
-    type: '_container',
-    items: ['title'],
-    classes: 'flex-column',
+    id: "logo",
+    type: "image",
+    src: "https://storage.googleapis.com/g-saas.appspot.com/tenants/66b36d8e84119bb650ebeb79/prima_health.png",
   },
   {
-    id: 'footer',
-    type: '_container',
-    items: ['title'],
-    classes: 'flex-column',
+    id: "header-links",
+    type: "_container",
+    items: ["homeLink", "aboutLink", "contactLink"],
+    classes: "flex-column",
   },
   {
-    id: 'title',
-    type: 'title',
+    id: "homeLink",
+    type: "link",
+    text: "Home",
+    href: "/"
   },
   {
-    id: 'nav-bar',
-    type: 'nav-bar',
-    logo: 'https://storage.googleapis.com/g-saas.appspot.com/tenants/66b36d8e84119bb650ebeb79/prima_health.png',
+    id: "aboutLink",
+    type: "link",
+    text: "About",
+    href: "/about-us"
   },
-];
-
+  {
+    id: "contactLink",
+    type: "link",
+    text: "Contact",
+    href: "/contact-us"
+  }
+]

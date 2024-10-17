@@ -64,7 +64,8 @@ export class AppComponent implements OnInit {
   }
 
   getPageConfig(): ComponentConfig[] {
-    const localConfig = localStorage.getItem('config') ?? JSON.stringify(defaultConfig);
+    //const localConfig = localStorage.getItem('config') ?? JSON.stringify(defaultConfig);
+    const localConfig =  JSON.stringify(defaultConfig);
     return JSON.parse(localConfig) as ComponentConfig[];
   }
 
