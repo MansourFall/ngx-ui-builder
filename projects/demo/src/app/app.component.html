@@ -1,196 +1,71 @@
 <div class="flex flex-column">
   <div>
+  <section class="header">
+    <div class="py-3 px-6 shadow-2 flex align-items-center justify-content-between relative lg:static"
+         [ngStyle]="{ 'min-height': '80px', 'background-color': siteColor }">
+      <!-- Logo -->
+      <uib-zone id="header-logo">
+        <ng-template uib-template="image" let-config>
+         <img [src]="config?.src" alt="logo" height="40" class="mr-0 lg:mr-6">
+        </ng-template>
+      </uib-zone>
 
-        <div class="py-3 px-6 shadow-2 flex align-items-center justify-content-between relative lg:static"
-             [ngStyle]="{ 'min-height': '80px', 'background-color': siteColor }">
-          <!-- Logo -->
-          <uib-zone id="header-logo">
-            <ng-template uib-template="image" let-config>
-             <img [src]="config?.src" alt="logo" height="40" class="mr-0 lg:mr-6">
+      <a pRipple pStyleClass="@next" enterClass="hidden" leaveToClass="hidden" class="pRipple p-element cursor-pointer block lg:hidden"
+        [ngStyle]="{'color': '#ffffff'}">
+        <i class="pi pi-bars text-4xl"></i><span class="p-ink" style="height: 34px; width: 34px; top: -4.25px; left: -4px;"></span>
+      </a>
+
+      <div class="align-items-center flex-grow-1 justify-content-end lg:flex hidden absolute pt-3 lg:static w-full left-0 top-100 z-1 shadow-2 lg:shadow-none lg:gap-2"
+           [ngStyle]="{ 'background-color': siteColor }">
+        <ul class="list-none p-0 m-0  flex lg:align-items-center select-none flex-column lg:flex-row">
+          <!-- Links -->
+          <uib-zone id="header-links">
+            <ng-template uib-template="link" let-config>
+              <li><a pRipple href="{{config?.href}}" class="pRipple p-element px-6 p-3 lg:px-3 lg:py-2 align-items-center no-underline hover:underline font-medium border-round cursor-pointer transition-colors transition-duration-150"
+                     [ngStyle]="{ 'color': config?.color }">
+
+                <span>{{config?.label}}</span><span class="p-ink"></span></a>
+              </li>
+            </ng-template>
+          </uib-zone>
+        </ul>
+        <div class="flex justify-content-around lg:block border-top-1 px-2 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
+
+          <uib-zone id="header-buttons">
+            <ng-template uib-template="button-filled" let-config>
+              <button pButton pRipple label="{{config?.label}}" class="p-element p-ripple font-bold p-button p-component"
+                    [ngStyle]="{'background-color': config?.backgroundColor,'color': config?.color,'border': 'none'}"><span class="p-ink"></span></button>
+            </ng-template>
+            <ng-template uib-template="button-outlined" let-config>
+              <button pButton pRipple label="{{config?.label}}" class="p-element p-ripple p-button-outlined font-bold p-button p-component"
+                      [ngStyle]="{'color': config?.color}"></button>
             </ng-template>
           </uib-zone>
 
-          <a pRipple pStyleClass="@next" enterClass="hidden" leaveToClass="hidden" class="pRipple p-element cursor-pointer block lg:hidden"
-            [ngStyle]="{'color': '#ffffff'}">
-            <i class="pi pi-bars text-4xl"></i><span class="p-ink" style="height: 34px; width: 34px; top: -4.25px; left: -4px;"></span>
-          </a>
 
-          <div class="align-items-center flex-grow-1 justify-content-end lg:flex hidden absolute pt-3 lg:static w-full left-0 top-100 z-1 shadow-2 lg:shadow-none lg:gap-2"
-               [ngStyle]="{ 'background-color': siteColor }">
-            <ul class="list-none p-0 m-0  flex lg:align-items-center select-none flex-column lg:flex-row">
-              <!-- Links -->
-              <uib-zone id="header-links">
-                <ng-template uib-template="link" let-config>
-                  <li><a pRipple href="{{config?.href}}" class="pRipple p-element px-6 p-3 lg:px-3 lg:py-2 align-items-center no-underline hover:underline font-medium border-round cursor-pointer transition-colors transition-duration-150"
-                         [ngStyle]="{ 'color': config?.color }">
+        </div>
+      </div>
+    </div>
+  </section>
 
-                    <span>{{config?.label}}</span><span class="p-ink"></span></a>
-                  </li>
-                </ng-template>
-              </uib-zone>
-            </ul>
-            <div class="flex justify-content-around lg:block border-top-1 px-2 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
-
-              <uib-zone id="header-buttons">
-                <ng-template uib-template="button-filled" let-config>
-                  <button pButton pRipple label="{{config?.label}}" class="p-element p-ripple font-bold p-button p-component"
-                        [ngStyle]="{'background-color': config?.backgroundColor,'color': config?.color,'border': 'none'}"><span class="p-ink"></span></button>
-                </ng-template>
-                <ng-template uib-template="button-outlined" let-config>
-                  <button pButton pRipple label="{{config?.label}}" class="p-element p-ripple p-button-outlined font-bold p-button p-component"
-                          [ngStyle]="{'color': config?.color}"></button>
-                </ng-template>
-              </uib-zone>
-
-
-            </div>
+  <section class="body">
+    <div class="p-5">
+      <h2 class="text-3xl lg:text-5xl mb-0">About Us</h2>
+      <div class="grid">
+        <div class="col-12 lg:col-6">
+          <h3 class="main-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+          <p class="sub-heading">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+        </div>
+        <div class="col-12 lg:col-6">
+          <div class="text-center border-round-sm">
+            <img loading="lazy" width="100%" style="border-radius: 1rem" src="https://s3-alpha-sig.figma.com/img/fe3e/13a7/6ce3d2e6eda966b37b643d639baa140f?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jJYYWYsKSOvorPMIm~dAgFKLZibMOlr5aQwy5hxn9HwnzQk6ZUB8j25YViv5aCYSEScR~5PnZ1aBGo3K9OQWUiEqqt-vx-~ZRZxV1rI-4SZD6jeyASXb75YH5WqeiBrNGWCcSA1R5U-zqWesp5rHg-jbxHghEXiKP32m4hoSlPX4bLajf4BeNVkzoEYtRASmP-9tCF1riIEiJtv7eIk0jPfTdZiP-872nRICS3pXuHlQYZ4jGM1zWo4GUSSj2ZpDDrdJp8YFJwuLIxETzO--hg3OopVVKzw1A5ptDPyUzSn2TZb-lhUb2uW~r6RuoHnlOHmpFQzc4SFdM5Robn0vkw__"  alt="About Us illustration">
           </div>
         </div>
+      </div>
+    </div>
 
+  </section>
 
-    <uib-zone id="body">
-      <ng-template uib-template="title">
-        <div class="ng-star-inserted">
-          <div class="relative p-8 overflow-hidden"><img
-            src="https://blocks.primeng.org/assets/images/blocks/hero/hero-2.jpg" alt="Image"
-            class="absolute top-0 left-0 w-auto h-full block md:w-full">
-            <div class="text-center my-6 relative">
-              <div i18n class="text-6xl text-white font-bold mb-1">The Platform For</div>
-              <div i18n class="text-6xl text-primary font-bold mb-4">Today's Generation</div>
-              <p i18n class="mt-0 mb-4 line-height-3 text-center mx-auto text-white" style="max-width: 500px;">Lorem ipsum
-                dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua.</p>
-              <button pbutton="" pRipple label="Learn More" type="button"
-                      class="p-element pRipple p-button p-component"><span i18n
-                                                                            class="p-button-label">Learn More</span><span class="p-ink"></span></button>
-              <p i18n class="text-sm mt-4 mb-4 line-height-3 text-white">Available for MacOS, Web and Google accounts
-                only</p>
-              <div class="flex justify-content-center align-items-center"><a href="https://www.apple.com"
-                                                                             class="text-white mr-3"><i
-                class="pi pi-apple text-2xl"></i></a><a href="https://play.google.com" class="text-white mr-3"><i
-                class="pi pi-android text-2xl"></i></a><a href="https://www.facebook.com" class="text-white"><i
-                class="pi pi-facebook text-2xl"></i></a></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="surface-ground px-4 py-8 md:px-6 lg:px-8">
-          <div class="text-900 font-bold text-6xl mb-4 text-center">Pricing Plans</div>
-          <div class="text-700 text-xl mb-6 text-center line-height-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit numquam eligendi quos.</div>
-
-          <div class="grid">
-            <div class="col-12 lg:col-4">
-              <div class="p-3 h-full">
-                <div class="shadow-2 p-3 h-full flex flex-column surface-card" style="border-radius: 6px">
-                  <div class="text-900 font-medium text-xl mb-2">Basic</div>
-                  <div class="text-600">Plan description</div>
-                  <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
-                  <div class="flex align-items-center">
-                    <span class="font-bold text-2xl text-900">$9</span>
-                    <span class="ml-2 font-medium text-600">per month</span>
-                  </div>
-                  <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
-                  <ul class="list-none p-0 m-0 flex-grow-1">
-                    <li class="flex align-items-center mb-3">
-                      <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                      <span class="text-900">Arcu vitae elementum</span>
-                    </li>
-                    <li class="flex align-items-center mb-3">
-                      <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                      <span class="text-900">Dui faucibus in ornare</span>
-                    </li>
-                    <li class="flex align-items-center mb-3">
-                      <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                      <span class="text-900">Morbi tincidunt augue</span>
-                    </li>
-                  </ul>
-                  <hr class="mb-3 mx-0 border-top-1 border-none surface-border mt-auto" />
-                  <button pButton pRipple label="Buy Now" class="p-3 w-full mt-auto"></button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 lg:col-4">
-              <div class="p-3 h-full">
-                <div class="shadow-2 p-3 h-full flex flex-column surface-card" style="border-radius: 6px">
-                  <div class="text-900 font-medium text-xl mb-2">Premium</div>
-                  <div class="text-600">Plan description</div>
-                  <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
-                  <div class="flex align-items-center">
-                    <span class="font-bold text-2xl text-900">$29</span>
-                    <span class="ml-2 font-medium text-600">per month</span>
-                  </div>
-                  <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
-                  <ul class="list-none p-0 m-0 flex-grow-1">
-                    <li class="flex align-items-center mb-3">
-                      <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                      <span class="text-900">Arcu vitae elementum</span>
-                    </li>
-                    <li class="flex align-items-center mb-3">
-                      <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                      <span class="text-900">Dui faucibus in ornare</span>
-                    </li>
-                    <li class="flex align-items-center mb-3">
-                      <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                      <span class="text-900">Morbi tincidunt augue</span>
-                    </li>
-                    <li class="flex align-items-center mb-3">
-                      <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                      <span class="text-900">Duis ultricies lacus sed</span>
-                    </li>
-                  </ul>
-                  <hr class="mb-3 mx-0 border-top-1 border-none surface-border" />
-                  <button pButton pRipple label="Buy Now" class="p-3 w-full"></button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12 lg:col-4">
-              <div class="p-3 h-full">
-                <div class="shadow-2 p-3 flex flex-column surface-card" style="border-radius: 6px">
-                  <div class="text-900 font-medium text-xl mb-2">Enterprise</div>
-                  <div class="text-600">Plan description</div>
-                  <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
-                  <div class="flex align-items-center">
-                    <span class="font-bold text-2xl text-900">$49</span>
-                    <span class="ml-2 font-medium text-600">per month</span>
-                  </div>
-                  <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
-                  <ul class="list-none p-0 m-0 flex-grow-1">
-                    <li class="flex align-items-center mb-3">
-                      <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                      <span class="text-900">Arcu vitae elementum</span>
-                    </li>
-                    <li class="flex align-items-center mb-3">
-                      <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                      <span class="text-900">Dui faucibus in ornare</span>
-                    </li>
-                    <li class="flex align-items-center mb-3">
-                      <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                      <span class="text-900">Morbi tincidunt augue</span>
-                    </li>
-                    <li class="flex align-items-center mb-3">
-                      <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                      <span class="text-900">Duis ultricies lacus sed</span>
-                    </li>
-                    <li class="flex align-items-center mb-3">
-                      <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                      <span class="text-900">Imperdiet proin</span>
-                    </li>
-                    <li class="flex align-items-center mb-3">
-                      <i class="pi pi-check-circle text-green-500 mr-2"></i>
-                      <span class="text-900">Nisi scelerisque</span>
-                    </li>
-                  </ul>
-                  <hr class="mb-3 mx-0 border-top-1 border-none surface-border" />
-                  <button pButton pRipple label="Buy Now" class="p-3 w-full p-button-outlined"></button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </ng-template>
-    </uib-zone>
     <uib-zone id="footer">
       <ng-template uib-template="title">
         <div class="bg-gray-900 px-4 py-8 md:px-6 lg:px-8">
