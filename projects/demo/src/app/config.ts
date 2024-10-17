@@ -26,7 +26,7 @@ export const defaultConfig:ComponentConfig[] = [
   {
     id: 'nav-bar',
     type: 'nav-bar',
-    logo: 'https://blocks.primeng.org/assets/images/blocks/logos/bastion.svg',
+    logo: 'https://storage.googleapis.com/g-saas.appspot.com/tenants/66b36d8e84119bb650ebeb79/prima_health.png',
   },
 ];
 

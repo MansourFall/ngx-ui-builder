@@ -44,6 +44,8 @@ import {BadgeModule} from "primeng/badge";
 })
 export class AppComponent implements OnInit {
 
+  siteColor: string = '#467E7B'  ;
+
   constructor(
     public configService: ConfigService,
     public configurableService: ConfigurableService,
