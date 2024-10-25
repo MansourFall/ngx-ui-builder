@@ -77,5 +77,5 @@ export const landingPageConfig:ComponentConfig[] = [
 
 export const rootConfig: any = {
   contactUsIsActive: false,
-  landingPageIsActive: true,
+  landingPageIsActive: true
 }
