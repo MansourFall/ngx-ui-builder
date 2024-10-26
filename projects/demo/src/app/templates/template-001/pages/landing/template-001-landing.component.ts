@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from "@angular/core";
-import {ComponentConfig, TemplateNameDirective, ZoneComponent} from "@gsaas/ngx-ui-builder";
+import {Component, OnInit} from "@angular/core";
+import {TemplateNameDirective, ZoneComponent} from "@gsaas/ngx-ui-builder";
 
 @Component({
     selector: 'app-template-001-landing',
@@ -12,7 +12,6 @@ import {ComponentConfig, TemplateNameDirective, ZoneComponent} from "@gsaas/ngx-
   }
 )
 export class Template001LandingComponent implements OnInit {
-  @Input() config: ComponentConfig[] = [];
   constructor() { }
 
   ngOnInit(): void {

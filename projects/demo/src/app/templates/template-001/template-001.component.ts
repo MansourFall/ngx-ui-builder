@@ -10,7 +10,7 @@ import {
   ZoneComponent
 } from "@gsaas/ngx-ui-builder";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {Router} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 
 @Component({
     selector: 'app-template-001',
@@ -30,7 +30,8 @@ import {Router} from "@angular/router";
     ReactiveFormsModule,
     ToolbarComponent,
     TooltipDirective,
-    NgModelChangeDebouncedDirective
+    NgModelChangeDebouncedDirective,
+    RouterLink
   ],
     templateUrl: './template-001.component.html',
 })
@@ -48,6 +49,9 @@ export class Template001Component implements OnInit {
     this.configService.init(JSON.parse(this.uiConfig.configuration));
     const currentPage = this.uiConfig?.pages?.find((page: any) => page.pageRoute === this.router.url.replace('/pages',''));
     this.pageIdentifier =  currentPage?.pageIdentifier ?? this.uiConfig.defaultPageIdentifier;
+  }
 
+  navigateTo(path: string) {
+    this.router.navigate(['/pages', path]).then(() =>  window.location.reload());
   }
 }

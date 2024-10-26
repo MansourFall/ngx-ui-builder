@@ -1,5 +1,10 @@
 <div>
 <div id="header" class="header" style="background-color: blue">
+   <ul>
+    <li class="cursor-pointer" (click)="navigateTo('home')">Home</li>
+    <li class="cursor-pointer" (click)="navigateTo('about-us')">About us</li>
+    <li class="cursor-pointer" (click)="navigateTo('contact-us')">Contact us</li>
+   </ul>
   <uib-zone id="template-001-header">
     <ng-template uib-template="text" let-config>
       <div>{{config.content}}</div>

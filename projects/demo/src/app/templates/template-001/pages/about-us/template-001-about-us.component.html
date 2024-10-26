@@ -1,5 +1,10 @@
 <div id="about-us-page" class="about-us-page">
-  <div>Template 001</div>
-  <div>This is the text of the About us page of template-001 </div>
-  <div>This is the picture of the About us page of template-001</div>
+  <uib-zone id="template-001-about-us-page-body">
+    <ng-template uib-template="text" let-config>
+      <div>{{config.content}}</div>
+    </ng-template>
+    <ng-template uib-template="image" let-config>
+      <img width="500" src="{{config.src}}" alt="landing page" />
+    </ng-template>
+  </uib-zone>
 </div>
