@@ -1,0 +1,64 @@
+<div>
+<div id="header" class="header" style="background-color: blue">
+  <uib-zone id="template-001-header">
+    <ng-template uib-template="text" let-config>
+      <div>{{config.content}}</div>
+    </ng-template>
+  </uib-zone>
+</div>
+
+<ng-container *ngIf="pageIdentifier === 'template-001-landing'">
+  <app-template-001-landing ></app-template-001-landing>
+</ng-container>
+
+<ng-container *ngIf="pageIdentifier === 'template-001-about-us'">
+  <app-template-001-about-us></app-template-001-about-us>
+</ng-container>
+
+<ng-container *ngIf="pageIdentifier === 'template-001-contact-us'">
+  <app-template-001-contact-us></app-template-001-contact-us>
+</ng-container>
+
+<div id="footer" class="footer" style="background-color: blue">
+  <uib-zone id="template-001-footer">
+    <ng-template uib-template="text" let-config>
+      <div>{{config.content}}</div>
+    </ng-template>
+  </uib-zone>
+</div>
+
+<div class="uib-bootstrap">
+
+  <uib-toolbar>
+    <uib-toolbar>
+      <button i18n type="button" class="btn btn-warning" uib-tooltip="Download Configuration as JSON" (click)="configService.exportConfiguration()">
+        Download
+      </button>
+<!--      <button i18n type="button" class="btn btn-success" uib-tooltip="Save Configuration" (click)="save()">-->
+<!--        Save-->
+<!--      </button>-->
+    </uib-toolbar>
+  </uib-toolbar>
+
+  <uib-configurator>
+
+    <ng-template uib-template="text" let-context>
+      <label i18n class="form-label" for="content">Content:</label>
+      <input class="form-control" id="content"
+             type="text"
+             [(ngModel)]="context.config.content"
+             (ngModelChangeDebounced)="context.configChanged()"
+      />
+    </ng-template>
+
+    <ng-template uib-template="image" let-context>
+      <label i18n class="form-label" for="src">Image URL:</label>
+      <input class="form-control" id="src"
+             type="text"
+             [(ngModel)]="context.config.src"
+             (ngModelChangeDebounced)="context.configChanged()"
+      />
+    </ng-template>
+
+  </uib-configurator>
+</div>

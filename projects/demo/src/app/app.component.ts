@@ -1,41 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import {PrimeNGConfig} from "primeng/api";
-import {ContactUsComponent} from "./templates/contact-us/contact-us.component";
-import {LandingPageComponent} from "./templates/landing-page/landing-page.component";
-import {NgIf} from "@angular/common";
-import {rootConfig} from "./config";
-import {PrismaTemplateComponent} from "./templates/prisma-template/prisma-template.component";
-
+import {AsyncPipe, NgIf} from "@angular/common";
+import {Template001Component} from "./templates/template-001/template-001.component";
+import {Template002Component} from "./templates/template-002/template-002.component";
+import {UiConfigurationService} from "./services/ui-configuration.service";
+import {Observable} from "rxjs";
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    ContactUsComponent,
-    LandingPageComponent,
-    PrismaTemplateComponent,
-    NgIf
+    Template001Component,
+    Template002Component,
+    NgIf,
+    AsyncPipe
   ],
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-
-  contactUsIsActive: boolean;
-  landingPageIsActive: boolean;
+  uiConfig$: Observable<any>;
   constructor(
-    private primengConfig: PrimeNGConfig) {
+    private primengConfig: PrimeNGConfig,
+    private uiConfigurationService: UiConfigurationService) {
    // Enable ripple effect globally
     this.primengConfig.ripple = true;
+    this.uiConfig$ = this.uiConfigurationService.getGetConfigurationData();
   }
 
   ngOnInit() {
-    const pageConfig = this.getPageConfig();
-    console.log(pageConfig);
-    this.contactUsIsActive = pageConfig.contactUsIsActive;
-    this.landingPageIsActive = pageConfig.landingPageIsActive;
-  }
-
-  getPageConfig(): any {
-    const localConfig = localStorage.getItem('config') ?? JSON.stringify(rootConfig);
-    return JSON.parse(localConfig);
   }
 }

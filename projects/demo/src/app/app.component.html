@@ -1,9 +1,10 @@
+<div *ngIf="uiConfig$ | async; let uiConfig">
 
-<app-landing-page *ngIf="landingPageIsActive"></app-landing-page>
-<app-contact-us *ngIf="contactUsIsActive"></app-contact-us>
-<!--<app-prisma-template></app-prisma-template>-->
+<ng-container *ngIf="uiConfig.templateIdentifier === 'template-001'">
+  <app-template-001 [uiConfig]="uiConfig"></app-template-001>
+</ng-container>
 
-<!-- target -->
-<!--<app-landing-page *ngIf="activeTemplateIdentifier === 'template-001'" [data]="data"></app-landing-page>-->
-<!--<app-contact-us *ngIf="cactiveTemplateIdentifier === 'template-002'" [data]="data"></app-contact-us>-->
+<ng-container *ngIf="uiConfig.templateIdentifier === 'template-002'">
+  <app-template-002 [uiConfig]="uiConfig"></app-template-002>
+</ng-container>
 

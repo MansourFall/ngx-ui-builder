@@ -1,0 +1,21 @@
+{
+  "active-template":  {
+    "templateIdentifier": "template-001",
+    "defaultPageIdentifier": "template-001-landing",
+    "pages": [
+      {
+        "pageIdentifier": "template-001-landing",
+        "pageRoute": "/home"
+      },
+      {
+        "pageIdentifier": "template-001-about-us",
+        "pageRoute": "/about-us"
+      },
+      {
+        "pageIdentifier": "template-001-contact-us",
+        "pageRoute": "/contact-us"
+      }
+    ],
+    "configuration": "[{\"id\":\"template-001-header\",\"type\":\"_container\",\"items\":[\"template-001-header-text\"]},{\"id\":\"template-001-header-text\",\"type\":\"text\",\"content\":\"template-001 header text here\"},{\"id\":\"template-001-landing-page-hero\",\"type\":\"_container\",\"items\":[\"template-001-landing-page-hero-text\",\"template-001-landing-page-hero-image\"],\"classes\":\"flex\"},{\"id\":\"template-001-landing-page-hero-text\",\"type\":\"text\",\"content\":\"Template 001 Hero Section Text Her\"},{\"id\":\"template-001-landing-page-hero-image\",\"type\":\"image\",\"src\":\"https://storage.googleapis.com/g-saas-dev-micro-fe/g-saas-tenant-marketplace-mf-wrapper-ng/assets/images/Tenant_landing_page_default.svg\",\"display\":\"Hero Image\"},{\"id\":\"template-001-footer\",\"type\":\"_container\",\"items\":[\"template-001-footer-text\"]},{\"id\":\"template-001-footer-text\",\"type\":\"text\",\"content\":\"template-001 footer text here\"}]"
+  }
+}
