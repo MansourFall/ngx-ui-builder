@@ -8,3 +8,7 @@
   <app-template-002 [uiConfig]="uiConfig"></app-template-002>
 </ng-container>
 
+  <ng-container *ngIf="uiConfig.templateIdentifier === 'prisma-01'">
+    <prisma-01 [uiConfig]="uiConfig"></prisma-01>
+  </ng-container>
+

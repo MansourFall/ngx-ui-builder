@@ -5,6 +5,7 @@ import {Template001Component} from "./templates/template-001/template-001.compon
 import {Template002Component} from "./templates/template-002/template-002.component";
 import {UiConfigurationService} from "./services/ui-configuration.service";
 import {Observable} from "rxjs";
+import {Prisma01Component} from "./templates/prisma-01/prisma-01.component";
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -12,7 +13,8 @@ import {Observable} from "rxjs";
     Template001Component,
     Template002Component,
     NgIf,
-    AsyncPipe
+    AsyncPipe,
+    Prisma01Component
   ],
   templateUrl: './app.component.html'
 })

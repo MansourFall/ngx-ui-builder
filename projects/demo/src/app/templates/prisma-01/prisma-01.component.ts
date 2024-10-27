@@ -1,7 +1,4 @@
 import {Component, Input, OnInit} from "@angular/core";
-import {Template001LandingComponent} from "./pages/landing/template-001-landing.component";
-import {Template001AboutUsComponent} from "./pages/about-us/template-001-about-us.component";
-import {Template001ContactUsComponent} from "./pages/contact-us/template-001-contact-us.component";
 import {CommonModule, NgIf} from "@angular/common";
 import {
   ConfigService,
@@ -11,18 +8,23 @@ import {
 } from "@gsaas/ngx-ui-builder";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {Router, RouterLink} from "@angular/router";
+import {BadgeModule} from "primeng/badge";
+import {StyleClassModule} from "primeng/styleclass";
+import {RippleModule} from "primeng/ripple";
+import {ButtonModule} from "primeng/button";
 
 @Component({
-    selector: 'app-template-001',
-    standalone: true,
+  selector: 'prisma-01',
+  standalone: true,
   imports: [
     CommonModule,
     FormsModule,
     NgIf,
 
-    Template001LandingComponent,
-    Template001AboutUsComponent,
-    Template001ContactUsComponent,
+    ButtonModule,
+    RippleModule,
+    StyleClassModule,
+    BadgeModule,
 
     ZoneComponent,
     TemplateNameDirective,
@@ -33,11 +35,12 @@ import {Router, RouterLink} from "@angular/router";
     NgModelChangeDebouncedDirective,
     RouterLink
   ],
-    templateUrl: './template-001.component.html',
+  templateUrl: './prisma-01.component.html',
 })
-export class Template001Component implements OnInit {
+export class Prisma01Component implements OnInit {
   @Input() uiConfig: any = {};
   pageIdentifier: string = '';
+  siteColor: string = '#467E7B'  ;
   constructor(
     public configService: ConfigService,
     public configurableService: ConfigurableService,
@@ -50,6 +53,7 @@ export class Template001Component implements OnInit {
   }
 
   navigateTo(path: string) {
-    this.router.navigate(['/pages', path]).then(() =>  window.location.reload());
+    const sanitizedPath = path.startsWith('/') ? path.slice(1) : path;
+    this.router.navigate(['/pages', sanitizedPath]).then(() => window.location.reload());
   }
 }
