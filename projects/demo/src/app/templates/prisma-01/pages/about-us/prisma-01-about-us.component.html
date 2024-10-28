@@ -1,0 +1,33 @@
+<div  id="about-us-body" style="background-color: #F4F4F4">
+  <div class="p-5">
+    <uib-zone id="about-us-primary">
+      <ng-template uib-template="primary-heading" let-config>
+        <h2 class="text-3xl lg:text-5xl mb-0" [ngStyle]="{'color': config?.color}">{{config?.text}}</h2>
+      </ng-template>
+    </uib-zone>
+
+    <div class="grid">
+      <div class="col-12 lg:col-6">
+        <uib-zone id="about-us-secondary">
+          <ng-template uib-template="secondary-heading" let-config>
+            <h3 class="main-heading" [ngStyle]="{'color': config?.color}">{{config?.text}}</h3>
+          </ng-template>
+        </uib-zone>
+        <uib-zone id="about-us-content">
+          <ng-template uib-template="paragraph" let-config>
+            <p class="inline-block" [ngStyle]="{'color': config?.color}">{{config?.text}}</p>
+          </ng-template>
+        </uib-zone>
+      </div>
+      <div class="col-12 lg:col-6">
+        <div class="text-center border-round-sm">
+          <uib-zone id="featured-image">
+            <ng-template uib-template="image" let-config>
+              <img loading="lazy" width="100%" style="border-radius: 1rem" [src]="config?.src"  alt="About Us illustration">
+            </ng-template>
+          </uib-zone>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

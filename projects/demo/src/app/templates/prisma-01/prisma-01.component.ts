@@ -12,6 +12,10 @@ import {BadgeModule} from "primeng/badge";
 import {StyleClassModule} from "primeng/styleclass";
 import {RippleModule} from "primeng/ripple";
 import {ButtonModule} from "primeng/button";
+import {Prisma01LandingComponent} from "./pages/landing/prisma-01-landing.component";
+import {Prisma01ContactUsComponent} from "./pages/contact-us/prisma-01-contact-us.component";
+import {Prisma01AboutUsComponent} from "./pages/about-us/prisma-01-about-us.component";
+import {DividerModule} from "primeng/divider";
 
 @Component({
   selector: 'prisma-01',
@@ -26,6 +30,10 @@ import {ButtonModule} from "primeng/button";
     StyleClassModule,
     BadgeModule,
 
+    Prisma01LandingComponent,
+    Prisma01ContactUsComponent,
+    Prisma01AboutUsComponent,
+
     ZoneComponent,
     TemplateNameDirective,
     ConfiguratorComponent,
@@ -33,12 +41,14 @@ import {ButtonModule} from "primeng/button";
     ToolbarComponent,
     TooltipDirective,
     NgModelChangeDebouncedDirective,
-    RouterLink
+    RouterLink,
+    DividerModule
   ],
   templateUrl: './prisma-01.component.html',
 })
 export class Prisma01Component implements OnInit {
   @Input() uiConfig: any = {};
+  currentYear = new Date().getFullYear();
   pageIdentifier: string = '';
   siteColor: string = '#467E7B'  ;
   constructor(

@@ -1,6 +1,5 @@
 <div class="flex flex-column">
-  <div>
-    <section class="header">
+  <div id="header">
       <div class="py-3 px-6 shadow-2 flex align-items-center justify-content-between relative lg:static"
            [ngStyle]="{ 'min-height': '80px', 'background-color': siteColor }">
         <!-- Logo -->
@@ -46,80 +45,61 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="body">
+  <ng-container *ngIf="pageIdentifier === 'prisma-01-landing'">
+    <prisma-01-landing></prisma-01-landing>
+  </ng-container>
 
-      <div class="p-5">
-        <uib-zone id="about-us-primary">
-          <ng-template uib-template="primary-heading" let-config>
-            <h2 class="text-3xl lg:text-5xl mb-0" [ngStyle]="{'color': config?.color}">{{config?.text}}</h2>
-          </ng-template>
-        </uib-zone>
+  <ng-container *ngIf="pageIdentifier === 'prisma-01-about-us'">
+   <prisma-01-about-us></prisma-01-about-us>
+  </ng-container>
 
-        <div class="grid">
-          <div class="col-12 lg:col-6">
-            <uib-zone id="about-us-secondary">
-              <ng-template uib-template="secondary-heading" let-config>
-                <h3 class="main-heading" [ngStyle]="{'color': config?.color}">{{config?.text}}</h3>
-              </ng-template>
-            </uib-zone>
-            <uib-zone id="about-us-content">
-              <ng-template uib-template="paragraph" let-config>
-                <p class="inline-block" [ngStyle]="{'color': config?.color}">{{config?.text}}</p>
-              </ng-template>
-            </uib-zone>
+  <ng-container *ngIf="pageIdentifier === 'prisma-01-contact-us'">
+    <prisma-01-contact-us></prisma-01-contact-us>
+  </ng-container>
+
+  <div id="footer">
+    <div class="flex flex-column py-6 w-75 m-auto">
+      <div class="grid">
+        <div class="col-12 lg:col-6 lg:flex lg:justify-content-between">
+          <img height="40" src="https://storage.googleapis.com/g-saas.appspot.com/tenants/66b36d8e84119bb650ebeb79/prima_health.png" alt="logo">
+          <div class="my-4 lg:my-0"><span>Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam</span></div>
+        </div>
+        <div class="col-12  lg:col-offset-2 lg:col-4 lg:flex lg:justify-content-between">
+          <div class="flex justify-content-around gap-2 lg:gap-4 mb-4 lg:mb-0">
+            <img height="25" src="https://cdn-icons-png.flaticon.com/256/59/59439.png" alt="facebook">
+            <img height="25" src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="twitter">
+            <img height="25" src="https://cdn-icons-png.flaticon.com/512/1400/1400829.png" alt="instagram">
+            <img height="25" src="https://cdn-icons-png.flaticon.com/512/4401/4401412.png" alt="linkedin">
+            <img height="25" src="https://cdn-icons-png.flaticon.com/512/15047/15047433.png" alt="youtube">
           </div>
-          <div class="col-12 lg:col-6">
-            <div class="text-center border-round-sm">
-              <uib-zone id="featured-image">
-                <ng-template uib-template="image" let-config>
-                  <img loading="lazy" width="100%" style="border-radius: 1rem" [src]="config?.src"  alt="About Us illustration">
-                </ng-template>
-              </uib-zone>
-            </div>
+          <div class="lg:flex lg:gap-3">
+            <div><a class="cursor-pointer hover:underline">About us</a></div>
+            <div class="mt-2 lg:mt-0"><a class="cursor-pointer hover:underline">Contact us</a></div>
           </div>
         </div>
       </div>
-    </section>
-
-    <uib-zone id="footer">
-      <ng-template uib-template="title">
-        <div class="bg-gray-900 px-4 py-8 md:px-6 lg:px-8">
-          <div class="bg-gray-900">
-            <div class="grid">
-              <div class="col-12 md:col-3 flex flex-wrap justify-content-start md:mb-0 mb-3"><img
-                src="https://blocks.primeng.org/assets/images/blocks/footer/footer-2.png" alt="footer sections" width="50" height="50"
-                class="mr-3">
-                <div i18n class="text-gray-300 font-bold text-5xl">Bastion</div>
-              </div>
-              <div class="col-12 md:col-3">
-                <div i18n class="text-white text-lg mb-4 flex flex-wrap" style="max-width: 290px;">Jacob Obrechtstraat 5,
-                  1071 KC Amsterdam The Netherlands
-                </div>
-                <div class="text-white mb-3"><i class="pi pi-phone surface-800 border-round p-1 mr-2"></i>(31) 20 779
-                  8986
-                </div>
-                <div i18n class="text-white mb-3"><i class="pi pi-inbox surface-800 border-round p-1 mr-2"></i>hello@bastion.co
-                </div>
-              </div>
-              <div class="col-12 md:col-3 text-gray-200">
-                <div i18n class="text-white font-bold line-height-3 mb-3">Company</div>
-                <a i18n class="line-height-3 block cursor-pointer mb-2">About Us</a><a i18n
-                                                                                       class="line-height-3 block cursor-pointer mb-2">News</a><a i18n
-                                                                                                                                                  class="line-height-3 block cursor-pointer mb-2">Investor Relations</a><a i18n
-                                                                                                                                                                                                                           class="line-height-3 block cursor-pointer mb-2">Careers</a><a i18n
-                                                                                                                                                                                                                                                                                         class="line-height-3 block cursor-pointer">Media Kit</a></div>
-              <div class="col-12 md:col-3 text-gray-200">
-                <div i18n class="text-white font-bold line-height-3 mb-3">Resourses</div>
-                <a i18n class="line-height-3 block cursor-pointer mb-2">Get Started</a><a i18n
-                                                                                          class="line-height-3 block cursor-pointer mb-2">Learn</a><a i18n class="line-height-3 block cursor-pointer">Case
-                Studies</a></div>
-            </div>
+      <p-divider></p-divider>
+      <div class="grid lg:flex lg:justify-content-between mt-3">
+        <div>
+          <span>Copyright © {{currentYear}} Gebeya</span>
+        </div>
+        <div class="mt-4 lg:mt-0">
+          <div>
+            <a class="cursor-pointer hover:underline">All Rights Reserved </a>
+            |
+            <a class="cursor-pointer hover:underline">Terms and Conditions</a>
+            |
+            <a class="cursor-pointer hover:underline">Privacy Policy</a>
           </div>
         </div>
-      </ng-template>
-    </uib-zone>
+      </div>
+
+
+    </div>
+
+  </div>
 
     <div class="uib-bootstrap">
 
@@ -246,5 +226,4 @@
 
       </uib-configurator>
     </div>
-  </div>
 </div>
