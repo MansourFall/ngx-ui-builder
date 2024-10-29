@@ -9,8 +9,6 @@ export class UiConfigurationService {
 
   getGetConfigurationData(): any {
     return this.http.get('http://localhost:8000/active-template');
-    // using json-server, see 'data/db.json' at the root of the project
-    //command: json-server --watch db.json --port 8000
   }
 }
 

@@ -63,20 +63,38 @@
     <div class="flex flex-column py-6 w-75 m-auto">
       <div class="grid">
         <div class="col-12 lg:col-6 lg:flex lg:justify-content-between">
-          <img height="40" src="https://storage.googleapis.com/g-saas.appspot.com/tenants/66b36d8e84119bb650ebeb79/prima_health.png" alt="logo">
-          <div class="my-4 lg:my-0"><span>Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam</span></div>
+          <!-- Logo -->
+          <uib-zone id="footer-logo">
+            <ng-template uib-template="image" let-config>
+              <img [src]="config?.src" alt="logo" height="40" class="mr-0 lg:mr-6">
+            </ng-template>
+          </uib-zone>
+          <div class="my-4 lg:my-0">
+            <uib-zone id="footer-custom-text">
+              <ng-template uib-template="text" let-config>
+                <span  [ngStyle]="{ 'color': config?.color }">{{config?.content}}</span>
+              </ng-template>
+            </uib-zone>
+
+          </div>
         </div>
-        <div class="col-12  lg:col-offset-2 lg:col-4 lg:flex lg:justify-content-between">
+        <div class="col-12  lg:col-offset-2 lg:col-4 lg:flex lg:justify-content-between align-items-center">
           <div class="flex justify-content-around gap-2 lg:gap-4 mb-4 lg:mb-0">
-            <img height="25" src="https://cdn-icons-png.flaticon.com/256/59/59439.png" alt="facebook">
-            <img height="25" src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="twitter">
-            <img height="25" src="https://cdn-icons-png.flaticon.com/512/1400/1400829.png" alt="instagram">
-            <img height="25" src="https://cdn-icons-png.flaticon.com/512/4401/4401412.png" alt="linkedin">
-            <img height="25" src="https://cdn-icons-png.flaticon.com/512/15047/15047433.png" alt="youtube">
+            <uib-zone id="footer-social-links">
+              <ng-template uib-template="social-link" let-config>
+                <a href="{{config?.url}}">
+                  <img height="15" [src]="config?.icon" alt="social link">
+                </a>
+              </ng-template>
+            </uib-zone>
           </div>
           <div class="lg:flex lg:gap-3">
-            <div><a class="cursor-pointer hover:underline">About us</a></div>
-            <div class="mt-2 lg:mt-0"><a class="cursor-pointer hover:underline">Contact us</a></div>
+            <uib-zone id="footer-navigation-links">
+              <ng-template uib-template="link" let-config>
+               <div><a class="cursor-pointer hover:underline mt-2 lg:mt-0" (click)="navigateTo(config?.href)">{{config?.label}}</a></div>
+              </ng-template>
+            </uib-zone>
+
           </div>
         </div>
       </div>
@@ -87,11 +105,19 @@
         </div>
         <div class="mt-4 lg:mt-0">
           <div>
-            <a class="cursor-pointer hover:underline">All Rights Reserved </a>
-            |
-            <a class="cursor-pointer hover:underline">Terms and Conditions</a>
-            |
-            <a class="cursor-pointer hover:underline">Privacy Policy</a>
+            <uib-zone id="footer-legal-links">
+              <ng-template uib-template="link" let-config>
+                <a class="cursor-pointer hover:underline" (click)="navigateTo(config?.href)">{{config?.label}}</a>
+              </ng-template>
+              <ng-template uib-template="vertical-separator">
+                <span class="mx-2">|</span>
+              </ng-template>
+            </uib-zone>
+<!--            <a class="cursor-pointer hover:underline">All Rights Reserved </a>-->
+<!--            |-->
+<!--            <a class="cursor-pointer hover:underline">Terms and Conditions</a>-->
+<!--            |-->
+<!--            <a class="cursor-pointer hover:underline">Privacy Policy</a>-->
           </div>
         </div>
       </div>
@@ -132,9 +158,9 @@
                  [(ngModel)]="context.config.label"
                  (ngModelChangeDebounced)="context.configChanged()"
           />
-          <label i18n class="form-label" for="href"> Color:</label>
-          <input class="form-control" id="color"
-                 type="text"
+          <label i18n class="form-label" > Color:</label>
+          <input class="form-control"
+                 type="color"
                  [(ngModel)]="context.config.color"
                  (ngModelChangeDebounced)="context.configChanged()"
           />
@@ -148,21 +174,21 @@
 
 
         <ng-template uib-template="button-filled" let-context>
-          <label i18n class="form-label" for="label"> Label:</label>
-          <input class="form-control" id="label"
+          <label i18n class="form-label"> Label:</label>
+          <input class="form-control"
                  type="text"
                  [(ngModel)]="context.config.label"
                  (ngModelChangeDebounced)="context.configChanged()"
           />
-          <label i18n class="form-label" for="href"> Color:</label>
-          <input class="form-control" id="color"
-                 type="text"
+          <label i18n class="form-label" > Color:</label>
+          <input class="form-control"
+                 type="color"
                  [(ngModel)]="context.config.color"
                  (ngModelChangeDebounced)="context.configChanged()"
           />
           <label i18n class="form-label" for="backgroundColor"> Background Color:</label>
           <input class="form-control" id="backgroundColor"
-                 type="text"
+                 type="color"
                  [(ngModel)]="context.config.backgroundColor"
                  (ngModelChangeDebounced)="context.configChanged()"
           />
@@ -170,15 +196,15 @@
 
 
         <ng-template uib-template="button-outlined" let-context>
-          <label i18n class="form-label" for="label"> Label:</label>
-          <input class="form-control" id="label"
+          <label i18n class="form-label"> Label:</label>
+          <input class="form-control"
                  type="text"
                  [(ngModel)]="context.config.label"
                  (ngModelChangeDebounced)="context.configChanged()"
           />
-          <label i18n class="form-label" for="href"> Color:</label>
-          <input class="form-control" id="color"
-                 type="text"
+          <label i18n class="form-label"> Color:</label>
+          <input class="form-control"
+                 type="color"
                  [(ngModel)]="context.config.color"
                  (ngModelChangeDebounced)="context.configChanged()"
           />
@@ -190,22 +216,22 @@
                  type="text"
                  [(ngModel)]="context.config.text"
                  (ngModelChangeDebounced)="context.configChanged()"/>
-          <label i18n class="form-label" for="color"> Color:</label>
-          <input class="form-control" id="color"
-                 type="text"
+          <label i18n class="form-label"> Color:</label>
+          <input class="form-control"
+                 type="color"
                  [(ngModel)]="context.config.color"
                  (ngModelChangeDebounced)="context.configChanged()"/>
         </ng-template>
 
         <ng-template uib-template="secondary-heading" let-context>
-          <label i18n class="form-label" for="text"> Content:</label>
-          <input class="form-control" id="text"
+          <label i18n class="form-label"> Content:</label>
+          <input class="form-control"
                  type="text"
                  [(ngModel)]="context.config.text"
                  (ngModelChangeDebounced)="context.configChanged()"/>
-          <label i18n class="form-label" for="color"> Color:</label>
-          <input class="form-control" id="color"
-                 type="text"
+          <label i18n class="form-label"> Color:</label>
+          <input class="form-control"
+                 type="color"
                  [(ngModel)]="context.config.color"
                  (ngModelChangeDebounced)="context.configChanged()"/>
         </ng-template>
@@ -217,10 +243,38 @@
                     [(ngModel)]="context.config.text"
                     (ngModelChangeDebounced)="context.configChanged()">
           </textarea>
-          <label i18n class="form-label" for="color"> Color:</label>
-          <input class="form-control" id="color"
-                 type="text"
+          <label i18n class="form-label"> Color:</label>
+          <input class="form-control"
+                 type="color"
                  [(ngModel)]="context.config.color"
+                 (ngModelChangeDebounced)="context.configChanged()"/>
+        </ng-template>
+
+        <ng-template uib-template="text" let-context>
+          <label i18n class="form-label"> Content:</label>
+          <textarea class="form-control"
+                    type="text"
+                    [(ngModel)]="context.config.content"
+                    (ngModelChangeDebounced)="context.configChanged()">
+          </textarea>
+          <label i18n class="form-label"> Color:</label>
+          <input class="form-control"
+                 type="color"
+                 [(ngModel)]="context.config.color"
+                 (ngModelChangeDebounced)="context.configChanged()"/>
+        </ng-template>
+
+        <ng-template uib-template="social-link" let-context>
+          <label i18n class="form-label"> Icon:</label>
+          <textarea class="form-control"
+                    type="text"
+                    [(ngModel)]="context.config.icon"
+                    (ngModelChangeDebounced)="context.configChanged()">
+          </textarea>
+          <label i18n class="form-label"> Link:</label>
+          <input class="form-control"
+                 type="text"
+                 [(ngModel)]="context.config.url"
                  (ngModelChangeDebounced)="context.configChanged()"/>
         </ng-template>
 

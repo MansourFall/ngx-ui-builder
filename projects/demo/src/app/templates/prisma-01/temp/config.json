@@ -1,0 +1,254 @@
+[
+  {
+    "id": "header-logo",
+    "type": "_container",
+    "items": [
+      "h-logo"
+    ],
+    "classes": "flex-column",
+    "pageIdentifier": "shared"
+  },
+  {
+    "id": "h-logo",
+    "type": "image",
+    "src": "https://storage.googleapis.com/g-saas-prod.appspot.com/cdn/prisma-01/prima-health.png",
+    "pageIdentifier": "shared"
+  },
+  {
+    "id": "header-links",
+    "type": "_container",
+    "items": [
+      "home-link",
+      "about-us-link",
+      "contact-us-link"
+    ],
+    "classes": "flex",
+    "pageIdentifier": "shared"
+  },
+  {
+    "id": "home-link",
+    "type": "link",
+    "label": "Home",
+    "href": "/",
+    "color": "#ffffff",
+    "pageIdentifier": "shared"
+  },
+  {
+    "id": "about-us-link",
+    "type": "link",
+    "label": "About Us",
+    "href": "/about-us",
+    "color": "#ffffff",
+    "pageIdentifier": "shared"
+  },
+  {
+    "id": "contact-us-link",
+    "type": "link",
+    "label": "Contact Us",
+    "href": "/contact-us",
+    "color": "#ffffff",
+    "pageIdentifier": "shared"
+  },
+  {
+    "id": "header-buttons",
+    "type": "_container",
+    "items": [
+      "sign-up-button",
+      "log-in-button"
+    ],
+    "classes": "flex gap-2",
+    "pageIdentifier": "shared"
+  },
+  {
+    "id": "sign-up-button",
+    "type": "button-filled",
+    "label": "Sign Up",
+    "color": "#000000",
+    "backgroundColor": "#ffffff",
+    "pageIdentifier": "shared"
+  },
+  {
+    "id": "log-in-button",
+    "type": "button-outlined",
+    "label": "Log In",
+    "color": "#ffffff",
+    "pageIdentifier": "shared"
+  },
+  {
+    "id": "about-us-primary",
+    "type": "_container",
+    "items": [
+      "about-us-primary-heading"
+    ],
+    "pageIdentifier": "prisma-01-about-us"
+  },
+  {
+    "id": "about-us-primary-heading",
+    "type": "primary-heading",
+    "text": "About Us",
+    "color": "#000000",
+    "pageIdentifier": "prisma-01-about-us"
+  },
+  {
+    "id": "about-us-secondary",
+    "type": "_container",
+    "items": [
+      "about-us-secondary-heading"
+    ],
+    "pageIdentifier": "prisma-01-about-us"
+  },
+  {
+    "id": "about-us-secondary-heading",
+    "type": "secondary-heading",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "color": "#000000",
+    "pageIdentifier": "prisma-01-about-us"
+  },
+  {
+    "id": "about-us-content",
+    "type": "_container",
+    "items": [
+      "about-us-content-paragraph"
+    ],
+    "classes": "flex-column",
+    "pageIdentifier": "prisma-01-about-us"
+  },
+  {
+    "id": "about-us-content-paragraph",
+    "type": "paragraph",
+    "text": "Sed do eiusmod tempor darko vador incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Lumen do eiusmod ator incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Lorem ipsum etc do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+    "color": "#000000",
+    "pageIdentifier": "prisma-01-about-us"
+  },
+  {
+    "id": "featured-image",
+    "type": "_container",
+    "items": [
+      "about-us-featured-image"
+    ],
+    "pageIdentifier": "prisma-01-about-us"
+  },
+  {
+    "id": "about-us-featured-image",
+    "type": "image",
+    "src": "https://storage.googleapis.com/g-saas-prod.appspot.com/cdn/prisma-01/featured-image.webp",
+    "pageIdentifier": "prisma-01-about-us"
+  },
+  {
+    "id": "footer-logo",
+    "type": "_container",
+    "items": [
+      "f-logo"
+    ],
+    "classes": "flex-column",
+    "pageIdentifier": "shared"
+  },
+  {
+    "id": "f-logo",
+    "type": "image",
+    "src": "https://storage.googleapis.com/g-saas-prod.appspot.com/cdn/prisma-01/prima-health.png",
+    "pageIdentifier": "shared"
+  },
+  {
+    "id": "footer-custom-text",
+    "type": "_container",
+    "items": [
+      "f-custom-text"
+    ],
+    "classes": "flex-column",
+    "pageIdentifier": "shared"
+  },
+  {
+    "id": "f-custom-text",
+    "type": "text",
+    "content": "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam",
+    "color": "#000000",
+    "pageIdentifier": "shared"
+  },
+  {
+    "id": "footer-social-links",
+    "type": "_container",
+    "items": [
+      "f-facebook",
+      "f-twitter",
+      "f-instagram",
+      "f-linkedin",
+      "f-youtube"
+    ],
+    "classes": "flex gap-3",
+    "pageIdentifier": "shared"
+  },
+  {
+    "id": "f-facebook",
+    "type": "social-link",
+    "icon": "https://storage.googleapis.com/g-saas-prod.appspot.com/cdn/prisma-01/Facebook.png",
+    "url": "https://www.facebook.com/gebeyatalent/"
+  },
+  {
+    "id": "f-twitter",
+    "type": "social-link",
+    "icon": "https://storage.googleapis.com/g-saas-prod.appspot.com/cdn/prisma-01/x-twitter.png",
+    "url": "https://www.facebook.com/gebeyatalent/"
+  },
+  {
+    "id": "f-instagram",
+    "type": "social-link",
+    "icon": "https://storage.googleapis.com/g-saas-prod.appspot.com/cdn/prisma-01/Instagram.png",
+    "url": "https://www.instagram.com/gebeyatalent/?hl=en"
+  },
+  {
+    "id": "f-linkedin",
+    "type": "social-link",
+    "icon": "https://storage.googleapis.com/g-saas-prod.appspot.com/cdn/prisma-01/LinkedIn.png",
+    "url": "https://www.linkedin.com/company/gebeya-inc."
+  },
+  {
+    "id": "f-youtube",
+    "type": "social-link",
+    "icon": "https://storage.googleapis.com/g-saas-prod.appspot.com/cdn/prisma-01/YouTube.png",
+    "url": "https://www.youtube.com/channel/UCxKsrv8lDyx1kunNI6cAdUA"
+  },
+  {
+    "id": "footer-navigation-links",
+    "type": "_container",
+    "items": [
+      "about-us-link",
+      "contact-us-link"
+    ],
+    "classes": "flex gap-3",
+    "pageIdentifier": "shared"
+  },
+  {
+    "id": "footer-legal-links",
+    "type": "_container",
+    "items": [
+      "all-rights-reserved",
+      "vertical-separator"  ,
+      "terms-and-conditions",
+      "vertical-separator",
+      "privacy-policy"
+    ],
+    "classes": "flex gap-1"
+  },
+  {
+    "id": "all-rights-reserved",
+    "type": "link",
+    "label": "All rights reserved",
+    "href": "https://gebeya.com/terms-of-service/",
+    "color": "#000000"
+  },
+  {
+    "id": "terms-and-conditions",
+    "type": "link",
+    "label": "Terms and Conditions",
+    "href": "https://gebeya.com/terms-of-service/",
+    "color": "#000000"
+  },
+  {
+    "id": "privacy-policy",
+    "type": "link",
+    "label": "Privacy Policy",
+    "href": "https://gebeya.com/privacy-policy/",
+    "color": "#000000"
+  }
+]
